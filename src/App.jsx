@@ -62,12 +62,11 @@ import { OfferPerResto } from "./components/restaurants/OfferPerResto";
 import { UpdateAdPro } from "./components/admin/UpdateAdPro";
 
 function App() {
-  const isLocal = window.location.hostname.includes("localhost");
-  axios.defaults.baseURL = isLocal
-    ? "http://localhost:3000"
-    : "https://pocket-buddy.onrender.com";
-  // axios.defaults.baseURL = "http://localhost:3000";
-
+  // axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+  axios.defaults.baseURL = "http://localhost:3000";
+  // Make sure this uses the environment variable
+  // axios.defaults.baseURL =
+  //   import.meta.env.VITE_API_URL || "http://localhost:3000";
   axios.defaults.withCredentials = true; // ne
   const location = useLocation();
 
